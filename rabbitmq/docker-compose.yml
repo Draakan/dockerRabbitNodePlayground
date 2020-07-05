@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  rabbitmq:
+    build: .
+    ports:
+      - 5672:5672
+      - 15672:15672
+      - 15674:15674
+      - 61613:61613
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    volumes:
+      - ${DATA_PATH_HOST}/rabbitmq:/var/lib/rabbitmq/mnesia
+    networks:
+      - rabbit-network
+
+networks:
+  rabbit-network:
+    external: true

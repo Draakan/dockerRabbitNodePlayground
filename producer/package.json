@@ -1,0 +1,29 @@
+{
+  "name": "docker-rabbitmq-node-playground",
+  "version": "1.0.0",
+  "description": "A playground for Docker with RabbitMQ and Node",
+  "author": "<draakan79@gmail.com>",
+  "keywords": [
+    "docker",
+    "docker-compose",
+    "rabbitmq",
+    "node",
+    "microservices",
+    "amqp"
+  ],
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "amqplib": "0.5.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "private": true,
+  "license": "MIT"
+}

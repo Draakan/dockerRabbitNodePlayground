@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  producer:
+    build:
+      context: ./producer
+      dockerfile: Dockerfile
+    working_dir: /usr/src/app
+    volumes:
+      - ./producer:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - rabbit-network
+    environment:
+      - MESSAGE_QUEUE=amqp://rabbitmq_rabbitmq_1
+    external_links: 
+      - rabbitmq_rabbitmq_1
+
+  consumer:
+    build:
+      context: ./consumer
+      dockerfile: Dockerfile
+    working_dir: /usr/src/app
+    volumes:
+      - ./consumer:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - rabbit-network
+    environment:
+      - MESSAGE_QUEUE=amqp://rabbitmq_rabbitmq_1
+    external_links: 
+      - rabbitmq_rabbitmq_1
+
+networks:
+  rabbit-network:
+    external: true
