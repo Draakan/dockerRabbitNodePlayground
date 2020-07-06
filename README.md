@@ -1,6 +1,6 @@
 # docker-rabbitmq-node-playground
 
-> A playground for Docker with RabbitMQ and Node.
+> A playground for Docker with RabbitMQ and Node (with web-stomp)
 
 # Development
 
