@@ -5,7 +5,7 @@
 # Development
 
 ```bash
-$ just type ./start.sh in your terminal
+$ docker network create rabbit-network && type ./start.sh in your terminal
 ```
 
 Then you can check connections in rabbitmq dashboard here: http://localhost:15672/
